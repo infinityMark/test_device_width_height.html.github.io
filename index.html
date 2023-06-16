@@ -8,11 +8,38 @@
 </head>
 <body>
     <h3>请先刷新网页，再进行测试，以保证精准</h3>
+    <button id="full">Full</button>
     <script>
         //  https://github.com/infinityMark/study_page.git
-        document.write("设备宽度为："+window.innerWidth+"px")
-        document.write("<br>")
-        document.write("设备高度为："+window.innerHeight+"px")
+        let viewFullScreen = document.getElementById("full");
+            if (viewFullScreen) {
+                viewFullScreen.addEventListener("click", function () {
+                    var docElm = document.documentElement;
+                    if (docElm.requestFullscreen) {
+                        docElm.requestFullscreen();
+
+                        setTimeout(() => {
+                            document.write("<br>")
+                document.write("设备总宽度为："+window.innerWidth+"px")
+                document.write("<br>")
+                document.write("设备总高度为："+window.innerHeight+"px")
+                        }, 1000);
+                setTimeout(function(){
+            document.exitFullscreen()
+        },1000)
+                    }
+                    else if (docElm.msRequestFullscreen) {
+                        docElm = document.body; //overwrite the element (for IE)
+                        docElm.msRequestFullscreen();
+                    }
+                    else if (docElm.mozRequestFullScreen) {
+                        docElm.mozRequestFullScreen();
+                    }
+                    else if (docElm.webkitRequestFullScreen) {
+                        docElm.webkitRequestFullScreen();
+                    }
+                }, false);
+            }
     </script>
 </body>
 </html>
