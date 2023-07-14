@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+HK&display=swap" rel="stylesheet">
     <title>设备宽、高测试</title>
+
+    <style>
+        body{
+            font-family: 'Ma Shan Zheng', cursive;
+            font-family: 'Noto Sans HK', sans-serif;
+            font-family: 'VT323', monospace;
+        }
+        #tool{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #full{
+            border-radius: 23px;
+            border: 3px solid #000000;
+            background-color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-    <h3>请先刷新网页，再进行测试，以保证精准</h3>
-    <button id="full">Full</button>
+    <div id="tool">
+        <h2>Please refresh the webpage before testing to ensure accuracy</h2>
+        <button id="full"><h1>Testing</h1></button>
+    </div>
     <script>
         //  https://github.com/infinityMark/study_page.git
         let viewFullScreen = document.getElementById("full");
